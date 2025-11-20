@@ -13,7 +13,8 @@ fun MovieDatabaseEntity.toDomain() = Movie(
     voteAverage = voteAverage,
     overview = overview,
     backdropPath = BACKDROP_BASE_URL + backdropPath,
-    releaseDate = releaseDate
+    releaseDate = releaseDate,
+    isAdultContent = isAdultContent,
 )
 
 fun Movie.toDatabaseEntity() = MovieDatabaseEntity().apply {
@@ -24,4 +25,5 @@ fun Movie.toDatabaseEntity() = MovieDatabaseEntity().apply {
     overview = this@toDatabaseEntity.overview
     backdropPath = BACKDROP_BASE_URL + this@toDatabaseEntity.backdropPath
     releaseDate = this@toDatabaseEntity.releaseDate
+    isAdultContent = this@toDatabaseEntity.isAdultContent
 }

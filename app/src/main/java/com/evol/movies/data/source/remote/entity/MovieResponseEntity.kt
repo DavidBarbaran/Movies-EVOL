@@ -17,4 +17,6 @@ data class MovieResponseEntity(
     val backdropPath: String,
     @SerializedName("release_date")
     val releaseDate: String,
+    @SerializedName("adult")
+    val isAdultContent: Boolean
 )

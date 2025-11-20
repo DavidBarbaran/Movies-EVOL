@@ -12,5 +12,6 @@ fun MovieResponseEntity.toDomain() = Movie(
     voteAverage = voteAverage,
     overview = overview,
     backdropPath = BACKDROP_BASE_URL + backdropPath,
-    releaseDate = releaseDate
+    releaseDate = releaseDate,
+    isAdultContent = isAdultContent
 )

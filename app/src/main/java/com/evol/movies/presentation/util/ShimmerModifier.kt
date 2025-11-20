@@ -18,7 +18,7 @@ fun Modifier.shimmer(): Modifier = composed {
     val transition = rememberInfiniteTransition(label = "")
     val translateAnim = transition.animateFloat(
         initialValue = 0f,
-        targetValue = 1000f, // ancho expandido
+        targetValue = 1000f,
         animationSpec = infiniteRepeatable(
             animation = tween(durationMillis = 1200, easing = LinearEasing),
             repeatMode = RepeatMode.Restart

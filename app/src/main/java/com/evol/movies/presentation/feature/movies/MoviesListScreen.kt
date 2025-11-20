@@ -4,10 +4,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
@@ -15,6 +13,8 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicText
+import androidx.compose.foundation.text.TextAutoSize
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -33,21 +33,26 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.evol.movies.R
 import com.evol.movies.presentation.dialogs.ErrorDialog
 import com.evol.movies.presentation.model.MovieUiModel
-import com.evol.movies.presentation.ui.theme.MoviesEVOLTheme
-import com.evol.movies.presentation.util.shimmer
+import com.evol.movies.presentation.navigation.Screen
+import com.evol.movies.presentation.theme.MoviesEVOLTheme
+import com.evol.movies.presentation.util.formatVoteAverage
 
 @Composable
 fun MoviesListScreen(
-    viewModel: ListMovieViewModel = hiltViewModel(),
+    navController: NavController,
+    viewModel: MoviesListViewModel = hiltViewModel(),
 ) {
 
     val uiState by viewModel.uiState.collectAsState()
@@ -74,11 +79,18 @@ fun MoviesListScreen(
         onLoadMore = {
             viewModel.loadNextPage()
         },
-        onClickMovie = {}
+        onClickMovie = { movie ->
+            navController.navigate(
+                route = Screen.MoviesDetail.createRoute(
+                    id = movie.id
+                )
+            )
+        }
     )
 
     errorMessage?.let { message ->
         ErrorDialog(
+            confirmButtonText = stringResource(R.string.retry),
             message = message,
             onRetry = {
                 errorMessage = null
@@ -178,7 +190,7 @@ fun MovieItem(
 ) {
     val context = LocalContext.current
 
-    val request = remember {
+    val request = remember(movie.posterPath) {
         ImageRequest.Builder(context)
             .data(movie.posterPath)
             .crossfade(true)
@@ -217,7 +229,7 @@ fun MovieItem(
             )
 
             Text(
-                text = movie.voteAverage.toString(),
+                text = movie.voteAverage.formatVoteAverage(),
                 modifier = Modifier.padding(start = 4.dp),
                 style = MaterialTheme.typography.bodyMedium
             )
@@ -226,52 +238,7 @@ fun MovieItem(
     }
 }
 
-@Composable
-fun MoviesListShimmer() {
-    LazyVerticalGrid(
-        columns = GridCells.Fixed(3),
-        horizontalArrangement = Arrangement.spacedBy(12.dp),
-        verticalArrangement = Arrangement.spacedBy(12.dp),
-        modifier = Modifier.padding(top = 12.dp)
-    ) {
-        items(12) { MovieShimmerItem() }
-    }
-}
-
-@Composable
-fun MovieShimmerItem() {
-    Column {
-        Spacer(
-            modifier = Modifier
-                .fillMaxWidth()
-                .aspectRatio(2f / 3f)
-                .clip(RoundedCornerShape(16.dp))
-                .shimmer()
-        )
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Spacer(
-            modifier = Modifier
-                .fillMaxWidth(0.8f)
-                .height(20.dp)
-                .clip(RoundedCornerShape(6.dp))
-                .shimmer()
-        )
-
-        Spacer(modifier = Modifier.height(4.dp))
-
-        Spacer(
-            modifier = Modifier
-                .fillMaxWidth(0.4f)
-                .height(16.dp)
-                .clip(RoundedCornerShape(6.dp))
-                .shimmer()
-        )
-    }
-}
-
-@Preview(showBackground = true)
+@Preview(showBackground = true, device = Devices.NEXUS_5)
 @Composable
 fun ListMovieScreenScreenPreview(
     @PreviewParameter(MoviesPreviewProvider::class)
