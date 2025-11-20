@@ -1,4 +1,4 @@
-package com.evol.movies.ui.theme
+package com.evol.movies.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

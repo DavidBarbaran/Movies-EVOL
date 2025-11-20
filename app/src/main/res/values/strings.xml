@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Movies EVOL</string>
+    <string name="title_movies">MOVIES</string>
+    <string name="retry">Reintentar</string>
+    <string name="error_network_unavailable">No se puede conectar al servidor. Revisa tu conexión y vuelve a intentarlo.</string>
+    <string name="error_uncaught_error">Ocurrió un error inesperado. Inténtalo nuevamente.</string>
+
 </resources>
