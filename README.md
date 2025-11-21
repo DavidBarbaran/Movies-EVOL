@@ -24,7 +24,7 @@ Aplicación demo de películas para evaluación técnica en EVOL (TSnet).
 
 <a href="https://youtube.com/shorts/HYPzzvqmBzI?feature=share"><img src="https://i.imgur.com/6kifBl4.png" width="277"/></a>
 
-<a href="https://github.com/DavidBarbaran/Movies-EVOL/releases/download/1.0.0-RC/app-release.apk"><img src="https://i.imgur.com/jMDgwCn.png" width="234"/></a>
+<a href="https://github.com/DavidBarbaran/Movies-EVOL/releases/download/1.0.0/app-release.apk"><img src="https://i.imgur.com/jMDgwCn.png" width="234"/></a>
 
 
 ## Comenzando
