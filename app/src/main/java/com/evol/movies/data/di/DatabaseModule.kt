@@ -13,13 +13,15 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object DatabaseModule {
 
+    private const val EVOL_MOVIES_DATABASE = "evol_movies_database"
+
     @Provides
     @Singleton
     fun provideRealmDatabase(): Realm {
         return Realm.open(
             RealmConfiguration.Builder(
                 schema = setOf(MovieDatabaseEntity::class)
-            ).build()
+            ).name(EVOL_MOVIES_DATABASE).build()
         )
     }
 }
