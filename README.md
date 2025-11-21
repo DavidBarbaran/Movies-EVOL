@@ -3,7 +3,7 @@
 
 <img src="https://i.imgur.com/FhCG4xc.png" />
 
-[![Kotlin](https://img.shields.io/badge/kotlin-1.3.72-blue.svg)](http://kotlinlang.org) [![Gradle](https://img.shields.io/badge/gradle-6.1.1-%2366DCB8.svg)](https://developer.android.com/studio/releases/gradle-plugin)
+[![Kotlin](https://img.shields.io/badge/kotlin-2.0.20-blue.svg)](http://kotlinlang.org) [![Gradle](https://img.shields.io/badge/gradle-8.13-%2366DCB8.svg)](https://developer.android.com/studio/releases/gradle-plugin)
 
 Aplicación demo de películas para evaluación técnica en EVOL (TSnet).
 
