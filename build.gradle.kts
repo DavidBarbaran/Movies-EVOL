@@ -5,4 +5,5 @@ plugins {
     alias(libs.plugins.kspAndroid) apply false
     alias(libs.plugins.daggerHiltAndroid) apply false
     alias(libs.plugins.realm.kotlin) apply false
+    alias(libs.plugins.google.gms.google.services) apply false
 }

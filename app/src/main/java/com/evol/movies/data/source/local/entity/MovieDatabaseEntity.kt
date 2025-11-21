@@ -12,4 +12,5 @@ class MovieDatabaseEntity : RealmObject {
     var overview: String = ""
     var backdropPath: String = ""
     var releaseDate: String = ""
+    var isAdultContent: Boolean = false
 }

@@ -1,4 +1,4 @@
-package com.evol.movies.presentation.ui.theme
+package com.evol.movies.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
@@ -21,31 +21,43 @@ val Typography = Typography(
     headlineLarge = TextStyle(
         fontFamily = poppinsFontFamily,
         fontWeight = FontWeight.ExtraBold,
-        fontSize = 44.sp,
-        letterSpacing = 0.sp
+        fontSize = 40.sp,
+        letterSpacing = 0.sp,
+        color = Black
     ),
     bodyLarge = TextStyle(
         fontFamily = poppinsFontFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
-        letterSpacing = 0.sp
+        letterSpacing = 0.sp,
+        color = Black
     ),
     bodyMedium = TextStyle(
         fontFamily = poppinsFontFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp,
-        letterSpacing = 0.sp
+        letterSpacing = 0.sp,
+        color = Black
     ),
     titleLarge = TextStyle(
         fontFamily = poppinsFontFamily,
         fontWeight = FontWeight.Bold,
         fontSize = 22.sp,
-        letterSpacing = 0.sp
+        letterSpacing = 0.sp,
+        color = Black
+    ),
+    titleMedium = TextStyle(
+        fontFamily = poppinsFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 16.sp,
+        letterSpacing = 0.sp,
+        color = Black
     ),
     labelSmall = TextStyle(
         fontFamily = poppinsFontFamily,
         fontWeight = FontWeight.Medium,
         fontSize = 16.sp,
-        letterSpacing = 0.5.sp
+        letterSpacing = 0.5.sp,
+        color = Black
     )
 )

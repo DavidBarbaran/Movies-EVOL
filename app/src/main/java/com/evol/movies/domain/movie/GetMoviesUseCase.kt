@@ -1,5 +1,6 @@
 package com.evol.movies.domain.movie
 
+import com.evol.movies.domain.repository.MovieRepository
 import javax.inject.Inject
 
 class GetMoviesUseCase @Inject constructor(

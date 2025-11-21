@@ -10,5 +10,6 @@ fun Movie.toUIModel() = MovieUiModel(
     voteAverage = voteAverage,
     overview = overview,
     backdropPath = backdropPath,
-    releaseDate = releaseDate
+    releaseDate = releaseDate,
+    isAdultContent = isAdultContent
 )

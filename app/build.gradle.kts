@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.kspAndroid)
     alias(libs.plugins.daggerHiltAndroid)
     alias(libs.plugins.realm.kotlin)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -57,9 +58,12 @@ android {
 
 dependencies {
 
+    // Core
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
+
+    // Design
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
@@ -67,24 +71,27 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.navigation.compose)
 
+    // Coil
     implementation(libs.coil.compose)
 
+    // Networking
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
     implementation(libs.logging.interceptor)
-
     implementation(libs.gson)
-
-    implementation(libs.androidx.paging.runtime)
-    implementation(libs.androidx.paging.compose)
 
     // Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
 
+    // Firebase
+    implementation(libs.firebase.analytics)
 
+    // Realm
     implementation(libs.realm.kotlin.base)
+
+    // Coroutines
     implementation(libs.kotlinx.coroutines.core)
 
     testImplementation(libs.junit)

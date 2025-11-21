@@ -8,4 +8,5 @@ data class Movie(
     val overview: String,
     val backdropPath: String,
     val releaseDate: String,
+    val isAdultContent: Boolean
 )
