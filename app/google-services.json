@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "687659089278",
+    "project_id": "movies-evol",
+    "storage_bucket": "movies-evol.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:687659089278:android:144ad1b35fe40ab207472f",
+        "android_client_info": {
+          "package_name": "com.evol.movies"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvWfBHF5Q_LbWAuKyn1QO8wx5AnDDIJ9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
